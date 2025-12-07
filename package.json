@@ -1,0 +1,38 @@
+{
+  "name": "typelink",
+  "version": "1.0.0",
+  "description": "TypeScript URL Shortener with Terminal UI and Auto-generated Code Snippets",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "typelink": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/cli.js",
+    "dev": "ts-node --esm src/cli.tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "url-shortener",
+    "typescript",
+    "cli",
+    "terminal-ui",
+    "code-snippets"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "meow": "^14.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "ink": "^6.5.1",
+    "nanoid": "^5.1.6",
+    "react": "^19.2.1"
+  }
+}

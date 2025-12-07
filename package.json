@@ -11,6 +11,7 @@
     "build": "tsc",
     "start": "npm run build && node dist/cli.js",
     "dev": "ts-node --esm src/cli.tsx",
+    "demo": "npm run build && node examples/demo.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

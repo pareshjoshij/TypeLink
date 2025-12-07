@@ -1,5 +1,9 @@
 # TypeLink | Terminal URL Shortener
 
+<p align="center">
+  <img src="Typelink.PNG" alt="TypeLink Home Page" width="100%">
+</p>
+
 TypeLink is a developer-focused URL shortener with a "Cyberpunk/Terminal" aesthetic. Currently implemented as a **Client-Side Simulation**, it provides the full experience of the tool using React, TypeScript, and Tailwind CSS.
 
 ## 🚀 How It Works

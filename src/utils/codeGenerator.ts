@@ -40,7 +40,7 @@ print(response.text)`,
 
 import (
     "fmt"
-    "io/ioutil"
+    "io"
     "net/http"
 )
 
@@ -50,7 +50,7 @@ func main() {
         panic(err)
     }
     defer resp.Body.Close()
-    body, _ := ioutil.ReadAll(resp.Body)
+    body, _ := io.ReadAll(resp.Body)
     fmt.Println(string(body))
 }`,
       },

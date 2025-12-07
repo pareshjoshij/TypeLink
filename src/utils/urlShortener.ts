@@ -38,8 +38,17 @@ export class UrlShortener {
       }
     } else {
       shortCode = nanoid(this.codeLength);
-      while (this.urls.has(shortCode)) {
+      let retries = 0;
+      const maxRetries = 10;
+      
+      while (this.urls.has(shortCode) && retries < maxRetries) {
         shortCode = nanoid(this.codeLength);
+        retries++;
+      }
+      
+      if (retries >= maxRetries) {
+        // If too many collisions, increase code length
+        shortCode = nanoid(this.codeLength + 2);
       }
     }
 

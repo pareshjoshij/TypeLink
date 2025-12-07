@@ -31,7 +31,8 @@ export const ListUrlsScreen: React.FC<ListUrlsScreenProps> = ({
         onSelectUrl(urls[selected]);
       } else if (input === 'd' || input === 'D') {
         urlShortener.deleteUrl(urls[selected].shortCode);
-        if (selected >= urls.length - 1 && selected > 0) {
+        const newLength = urls.length - 1;
+        if (selected >= newLength && selected > 0) {
           setSelected(selected - 1);
         }
       }

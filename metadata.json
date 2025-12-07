@@ -1,0 +1,5 @@
+{
+  "name": "TypeLink Terminal Shortener",
+  "description": "A cyberpunk-themed URL shortener with automatic Python code snippet generation.",
+  "requestFramePermissions": []
+}

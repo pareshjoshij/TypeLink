@@ -5,6 +5,9 @@ import PythonSnippet from './components/PythonSnippet';
 import { isValidUrl, saveUrl, formatPythonSnippet } from './utils';
 import { CommandHistory } from './types';
 
+const PROJECT_VERSION = '1.0.0';
+const REPOSITORY_URL = 'https://github.com/pareshjoshij/TypeLink';
+
 const App: React.FC = () => {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<CommandHistory[]>([]);
@@ -35,13 +38,35 @@ const App: React.FC = () => {
         type: 'output',
         content: (
           <div className="text-[#8b949e]">
-            <p>TypeLink Terminal Shortener v1.0.0</p>
+            <p>TypeLink Terminal Shortener v{PROJECT_VERSION}</p>
             <p className="mt-2">Available commands:</p>
             <ul className="list-disc list-inside ml-4 mt-1">
               <li><span className="text-[#d2a8ff]">help</span>: Show this message</li>
+              <li><span className="text-[#d2a8ff]">about</span>: Show project details</li>
               <li><span className="text-[#d2a8ff]">clear</span>: Clear terminal history</li>
               <li><span className="text-[#d2a8ff]">[url]</span>: Shorten a valid URL (e.g. https://google.com)</li>
             </ul>
+          </div>
+        )
+      });
+    } else if (cmd.toLowerCase() === 'about') {
+      newHistory.push({
+        type: 'output',
+        content: (
+          <div className="text-[#8b949e] space-y-1">
+            <p>TypeLink Terminal Shortener</p>
+            <p>Version: v{PROJECT_VERSION}</p>
+            <p>
+              Repository:{' '}
+              <a
+                href={REPOSITORY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#58a6ff] hover:underline"
+              >
+                {REPOSITORY_URL}
+              </a>
+            </p>
           </div>
         )
       });
@@ -127,7 +152,7 @@ const App: React.FC = () => {
         <TerminalWindow>
           {/* Intro Text */}
           <div className="mb-6">
-            <span className="text-[#3fb950]">Welcome to TypeLink v1.0.0</span>
+            <span className="text-[#3fb950]">Welcome to TypeLink v{PROJECT_VERSION}</span>
             <br />
             <span className="text-[#8b949e]">Type a URL to shorten it and get your Python snippet.</span>
             <br />

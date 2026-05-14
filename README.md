@@ -13,7 +13,7 @@ The application simulates a command-line interface directly in the browser:
 1.  **Terminal UI**: Users interact with a shell-like prompt (`user@typelink~$`).
 2.  **Command Processing**:
     *   **Shortening**: Inputting a valid URL (e.g., `https://example.com`) triggers the shortening logic.
-    *   **Commands**: Supports built-in commands like `help` and `clear`.
+    *   **Commands**: Supports built-in commands like `help`, `about`, and `clear`.
 3.  **Local Storage Database**: Instead of a server-side DB, it uses the browser's `localStorage` to persist shortened links and collision checks (simulating a Base62 algorithm).
 4.  **Code Generation**: For every shortened link, it auto-generates a **Python `requests` snippet**, reinforcing the developer-first theme.
 
